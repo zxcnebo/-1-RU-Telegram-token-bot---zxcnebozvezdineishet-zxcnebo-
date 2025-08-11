@@ -18,7 +18,7 @@ class Person:
         return self.__name
 
 
-bot = telebot.TeleBot('8259999195:AAHlxdfwCMVI_sVfatrab1Jj8hgSQ_Qs-oY')
+bot = telebot.TeleBot('token')
 
 users = {}  # user_id -> Person
 
@@ -76,5 +76,6 @@ def process_promo(message):
         bot.send_message(message.chat.id, "❌ Промокод недействителен.")
     # Покажем баланс
     bot.send_message(message.chat.id, f"💰 Твой баланс: {users[user_id].get_money()} монет")
+
 
 bot.polling()
